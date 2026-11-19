@@ -61,7 +61,7 @@ The local name is `tenv-<os>-<version>` with dots written as dashes, for example
 
 Docker Hub uses `lupaxa/tenv-<os>:<version>`, for example `lupaxa/tenv-alpine:3.24`. GHCR uses `ghcr.io/lupaxa-docker-toolbox/tenv-<os>:<version>`.
 
-`Config/packages.cfg` lists bash, curl, git, unzip, and the certificate package. Those let the image download an OpenTofu, Terraform, Terragrunt, Terramate, or Atmos release. The finished image starts bash.
+`Config/packages.cfg` lists bash, curl, git, gzip, tar, unzip, and the certificate package. Those let the image download and unpack an OpenTofu, Terraform, Terragrunt, Terramate, or Atmos release. The finished image starts bash.
 
 <a href="https://github.com/the-lupaxa-project">
     <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/components/footer-for-child-orgs.svg" alt="The Lupaxa Project Footer" width="100%" />
