@@ -1,4 +1,5 @@
-	latest="$(curl -fsSL -o /dev/null -w '%{url_effective}' -L https://github.com/tofuutils/tenv/releases/latest)" && \
+	repo="https://github.com/tofuutils/tenv" && \
+	latest="$(curl -fsSL -o /dev/null -w '%{url_effective}' -L "${repo}/releases/latest")" && \
 	tag="${latest##*/}" && \
 	case "$(uname -m)" in \
 		x86_64) tenv_arch=x86_64 ;; \
@@ -7,7 +8,7 @@
 		i386|i686) tenv_arch=i386 ;; \
 		*) echo "unsupported architecture: $(uname -m)" >&2; exit 1 ;; \
 	esac && \
-	curl -fsSL -o /tmp/tenv.tar.gz "https://github.com/tofuutils/tenv/releases/download/${tag}/tenv_${tag}_Linux_${tenv_arch}.tar.gz" && \
+	curl -fsSL -o /tmp/tenv.tar.gz "${repo}/releases/download/${tag}/tenv_${tag}_Linux_${tenv_arch}.tar.gz" && \
 	mkdir -p /tmp/tenv /root/.tenv && \
 	tar -xzf /tmp/tenv.tar.gz -C /tmp/tenv && \
 	for bin in tenv tf tofu terraform terragrunt terramate atmos; do \
